@@ -525,6 +525,24 @@
         "name": "Sprite-0001.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "redpatchsquare.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "redpatchsquare.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "redpatchsquare2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "redpatchsquare2.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1355,6 +1373,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "redpatchsquare",
+          "persistentUuid": "0e7da2ca-96cf-411a-b9a2-1e54ed1b8529",
+          "width": 0,
+          "x": 550,
+          "y": 525,
+          "zOrder": 25,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1977,6 +2011,58 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "redpatchsquare",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "acceleration": 200,
+              "allowDiagonals": true,
+              "angleOffset": 0,
+              "angularMaxSpeed": 180,
+              "cellHeight": 20,
+              "cellWidth": 20,
+              "extraBorder": 0,
+              "gridOffsetX": 0,
+              "gridOffsetY": 0,
+              "maxSpeed": 100,
+              "name": "Pathfinding",
+              "rotateObject": true,
+              "smoothingMaxCellGap": 1,
+              "type": "PathfindingBehavior::PathfindingBehavior"
+            }
+          ],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "redpatchsquare2.png",
+            "backFaceResourceName": "redpatchsquare2.png",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "redpatchsquare2.png",
+            "rightFaceResourceName": "redpatchsquare.png",
+            "topFaceResourceName": "redpatchsquare.png",
+            "bottomFaceResourceName": "redpatchsquare.png",
+            "frontFaceVisible": false,
+            "backFaceVisible": false,
+            "leftFaceVisible": false,
+            "rightFaceVisible": true,
+            "topFaceVisible": false,
+            "bottomFaceVisible": false,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -2035,6 +2121,9 @@
           },
           {
             "objectName": "gunviewmodel"
+          },
+          {
+            "objectName": "redpatchsquare"
           }
         ]
       },
@@ -3364,6 +3453,36 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Enemy Pathfinding"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::SetDestination"
+              },
+              "parameters": [
+                "redpatchsquare",
+                "Pathfinding",
+                "",
+                "Camera.X()",
+                "Camera.Y()"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -3473,6 +3592,10 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
         },
         {
           "name": "Resizable",
