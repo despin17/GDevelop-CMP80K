@@ -20,8 +20,8 @@
     "templateSlug": "3d-shooting-gallery",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
-    "name": "Utopian Pancake (3d shooting gallery)",
-    "description": "A 3D shooting gallery game example featuring a timer, score system, 3D first person movement on the X and Y planes, pointer lock, and hitscan gun mechanics.",
+    "name": "Patchwork Prototype  Core Mechanics",
+    "description": "Template from \"3d Shooting Gallery\" by HelperHenry.",
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
@@ -539,8 +539,53 @@
         "alwaysLoaded": false,
         "file": "redpatchsquare2.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"redpatchsquare2.png\",\"extension\":\".png\",\"pskl\":{}}",
         "name": "redpatchsquare2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite2.png\"}",
+        "name": "NewSprite2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Red_ball.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"Red_ball.png\",\"extension\":\".png\",\"pskl\":{}}",
+        "name": "Red_ball.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/New3DBox_Front.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "New3DBox_Front",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "red_cube.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "red_cube.png",
         "smoothed": true,
         "userAdded": false
       }
@@ -574,7 +619,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.37971210019480056,
+        "zoomFactor": 0.5290357402157043,
         "windowMask": false
       },
       "objectsGroups": [
@@ -594,7 +639,23 @@
               "name": "Target3"
             },
             {
+              "name": "Red_Cube"
+            }
+          ]
+        },
+        {
+          "name": "redPatches",
+          "objects": [
+            {
               "name": "redpatchsquare"
+            }
+          ]
+        },
+        {
+          "name": "redCubes",
+          "objects": [
+            {
+              "name": "Red_Cube"
             }
           ]
         }
@@ -706,7 +767,7 @@
           "name": "FloorCeiling",
           "persistentUuid": "c39a6500-6e96-4215-a7e1-736932792865",
           "width": 1475,
-          "x": -100,
+          "x": -200,
           "y": -75,
           "z": -2,
           "zOrder": -17,
@@ -895,7 +956,7 @@
           "name": "gunviewmodel",
           "persistentUuid": "236d409f-717a-4c5b-a315-10c888245c0d",
           "width": 0,
-          "x": 500,
+          "x": 475,
           "y": 125,
           "zOrder": 24,
           "numberProperties": [],
@@ -904,19 +965,25 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
+          "customSize": true,
+          "depth": 100,
+          "height": 100,
           "layer": "",
           "name": "redpatchsquare",
           "persistentUuid": "0e7da2ca-96cf-411a-b9a2-1e54ed1b8529",
-          "width": 0,
-          "x": 925,
+          "width": 1,
+          "x": 1125,
           "y": 450,
           "zOrder": 25,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 2
+            }
+          ]
         },
         {
           "angle": 0,
@@ -973,14 +1040,20 @@
           "keepRatio": true,
           "layer": "",
           "name": "redpatchsquare",
-          "persistentUuid": "b977d19b-ea9e-4f1d-abfb-a1992645aa93",
+          "persistentUuid": "bb412721-2d7e-433a-9998-85ed46a2848c",
           "width": 0,
-          "x": 1050,
-          "y": 125,
-          "zOrder": 26,
+          "x": 1150,
+          "y": 275,
+          "zOrder": 27,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 1
+            }
+          ]
         }
       ],
       "objects": [
@@ -1608,7 +1681,18 @@
           "assetStoreId": "",
           "name": "redpatchsquare",
           "type": "Scene3D::Cube3DObject",
-          "variables": [],
+          "variables": [
+            {
+              "name": "gotCube",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [
             {
@@ -1640,6 +1724,8 @@
               "PercentDamageReduction": 0
             },
             {
+              "name": "Pathfinding",
+              "type": "PathfindingBehavior::PathfindingBehavior",
               "acceleration": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
@@ -1649,12 +1735,9 @@
               "extraBorder": 0,
               "gridOffsetX": 0,
               "gridOffsetY": 0,
-              "isFolded": true,
               "maxSpeed": 100,
-              "name": "Pathfinding",
               "rotateObject": true,
-              "smoothingMaxCellGap": 1,
-              "type": "PathfindingBehavior::PathfindingBehavior"
+              "smoothingMaxCellGap": 1
             },
             {
               "name": "Tween",
@@ -1662,7 +1745,7 @@
             }
           ],
           "content": {
-            "width": 100,
+            "width": 1,
             "height": 100,
             "depth": 100,
             "enableTextureTransparency": true,
@@ -1680,6 +1763,76 @@
             "rightFaceVisible": true,
             "topFaceVisible": false,
             "bottomFaceVisible": false,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Red_Cube",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Health",
+              "type": "Health::Health",
+              "Health": 20,
+              "CurrentHealth": 0,
+              "MaxHealth": 20,
+              "DamageCooldown": 0,
+              "AllowOverHealing": false,
+              "IsHealthJustDamaged": false,
+              "DamageToBeApplied": 0,
+              "HitAtLeastOnce": false,
+              "ChanceToDodge": 0,
+              "IsJustDodged": false,
+              "HealToBeApplied": 0,
+              "HealthRegenRate": 0,
+              "HealthRegenDelay": 0,
+              "IsJustHealed": false,
+              "CurrentShieldPoints": 2.0247e-320,
+              "MaxShieldPoints": 0,
+              "ShieldDuration": 5,
+              "ShieldRegenRate": 0,
+              "BlockExcessDamage": false,
+              "ShieldRegenDelay": 0,
+              "IsShieldJustDamaged": false,
+              "ShieldDamageTaken": 2.0247e-320,
+              "FlatDamageReduction": 0,
+              "PercentDamageReduction": 0
+            }
+          ],
+          "content": {
+            "width": 25,
+            "height": 25,
+            "depth": 25,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "New3DBox_Front",
+            "backFaceResourceName": "red_cube.png",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "red_cube.png",
+            "rightFaceResourceName": "red_cube.png",
+            "topFaceResourceName": "red_cube.png",
+            "bottomFaceResourceName": "red_cube.png",
+            "frontFaceVisible": true,
+            "backFaceVisible": false,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
             "frontFaceResourceRepeat": false,
             "backFaceResourceRepeat": false,
             "leftFaceResourceRepeat": false,
@@ -1749,6 +1902,9 @@
           },
           {
             "objectName": "redpatchsquare"
+          },
+          {
+            "objectName": "Red_Cube"
           }
         ]
       },
@@ -2228,7 +2384,7 @@
                         "",
                         "GunSound",
                         "",
-                        "RandomFloatInRange(50,65)",
+                        "RandomFloatInRange(20,35)",
                         "RandomFloatInRange(0.7,1)"
                       ]
                     },
@@ -2402,7 +2558,7 @@
                                 "",
                                 "arcade_mode.ogg",
                                 "",
-                                "50",
+                                "20",
                                 "1"
                               ]
                             },
@@ -2474,7 +2630,7 @@
                                     "value": "PickedInstancesCount"
                                   },
                                   "parameters": [
-                                    "redpatchsquare",
+                                    "Red_Cube",
                                     "=",
                                     "1"
                                   ]
@@ -2515,7 +2671,7 @@
                                     "value": "Health::Health::Hit"
                                   },
                                   "parameters": [
-                                    "redpatchsquare",
+                                    "Red_Cube",
                                     "Health",
                                     "5",
                                     "",
@@ -2533,11 +2689,22 @@
                                         "value": "Health::Health::Health"
                                       },
                                       "parameters": [
-                                        "redpatchsquare",
+                                        "Red_Cube",
                                         "Health",
                                         "<=",
                                         "0",
                                         ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberObjectVariable"
+                                      },
+                                      "parameters": [
+                                        "Red_Cube",
+                                        "ID",
+                                        "=",
+                                        "1"
                                       ]
                                     }
                                   ],
@@ -2547,8 +2714,105 @@
                                         "value": "Delete"
                                       },
                                       "parameters": [
-                                        "redpatchsquare",
+                                        "Red_Cube",
                                         ""
+                                      ]
+                                    }
+                                  ],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "NumberObjectVariable"
+                                          },
+                                          "parameters": [
+                                            "redpatchsquare",
+                                            "ID",
+                                            "=",
+                                            "1"
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "Delete"
+                                          },
+                                          "parameters": [
+                                            "redpatchsquare",
+                                            ""
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "Health::Health::Health"
+                                      },
+                                      "parameters": [
+                                        "Red_Cube",
+                                        "Health",
+                                        "<=",
+                                        "0",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberObjectVariable"
+                                      },
+                                      "parameters": [
+                                        "Red_Cube",
+                                        "ID",
+                                        "=",
+                                        "2"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "Delete"
+                                      },
+                                      "parameters": [
+                                        "Red_Cube",
+                                        ""
+                                      ]
+                                    }
+                                  ],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "NumberObjectVariable"
+                                          },
+                                          "parameters": [
+                                            "redpatchsquare",
+                                            "ID",
+                                            "=",
+                                            "2"
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "Delete"
+                                          },
+                                          "parameters": [
+                                            "redpatchsquare",
+                                            ""
+                                          ]
+                                        }
                                       ]
                                     }
                                   ]
@@ -2656,6 +2920,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Timer controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2877,6 +3142,299 @@
                 "",
                 "Camera.X()",
                 "Camera.Y()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Red Cube",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"redTimer\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "redpatchsquare",
+                    "ID",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Red_Cube",
+                    "redpatchsquare.X() - 10",
+                    "redpatchsquare.Y() + 40",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "redpatchsquare",
+                    "Red_Cube"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Red_Cube",
+                    "ID",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Red_Cube",
+                    "Object3D",
+                    "+",
+                    "50"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "redpatchsquare",
+                    "ID",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Red_Cube",
+                    "redpatchsquare.X() - 10",
+                    "redpatchsquare.Y() + 40",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "redpatchsquare",
+                    "Red_Cube"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Red_Cube",
+                    "ID",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Red_Cube",
+                    "Object3D",
+                    "+",
+                    "50"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "redpatchsquare",
+                "ID",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Red_Cube",
+                "ID",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Red_Cube",
+                "=",
+                "redpatchsquare.X() - 10"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Red_Cube",
+                "=",
+                "redpatchsquare.Y() + 40"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "redpatchsquare",
+                "ID",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Red_Cube",
+                "ID",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Red_Cube",
+                "=",
+                "redpatchsquare.X() - 10"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Red_Cube",
+                "=",
+                "redpatchsquare.Y() + 40"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "redpatchsquare",
+                "Camera",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"GameScene\"",
+                ""
               ]
             }
           ]
