@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 217,
+    "build": 218,
     "major": 5,
     "minor": 4,
     "revision": 0
@@ -586,6 +586,24 @@
         "kind": "image",
         "metadata": "",
         "name": "red_cube.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/blackpatch_Front.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "blackpatch_Front",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/redpatchsquare2.png2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "redpatchsquare2.png2",
         "smoothed": true,
         "userAdded": false
       }
@@ -1841,6 +1859,101 @@
             "bottomFaceResourceRepeat": false,
             "materialType": "Basic"
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "blackpatch",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "gotCube",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Health",
+              "type": "Health::Health",
+              "Health": 25,
+              "CurrentHealth": 0,
+              "MaxHealth": 25,
+              "DamageCooldown": 0,
+              "AllowOverHealing": false,
+              "IsHealthJustDamaged": false,
+              "DamageToBeApplied": 0,
+              "HitAtLeastOnce": false,
+              "ChanceToDodge": 0,
+              "IsJustDodged": false,
+              "HealToBeApplied": 0,
+              "HealthRegenRate": 0,
+              "HealthRegenDelay": 0,
+              "IsJustHealed": false,
+              "CurrentShieldPoints": 2.0247e-320,
+              "MaxShieldPoints": 0,
+              "ShieldDuration": 5,
+              "ShieldRegenRate": 0,
+              "BlockExcessDamage": false,
+              "ShieldRegenDelay": 0,
+              "IsShieldJustDamaged": false,
+              "ShieldDamageTaken": 2.0247e-320,
+              "FlatDamageReduction": 0,
+              "PercentDamageReduction": 0
+            },
+            {
+              "name": "Pathfinding",
+              "type": "PathfindingBehavior::PathfindingBehavior",
+              "acceleration": 200,
+              "allowDiagonals": true,
+              "angleOffset": 0,
+              "angularMaxSpeed": 180,
+              "cellHeight": 20,
+              "cellWidth": 20,
+              "extraBorder": 0,
+              "gridOffsetX": 0,
+              "gridOffsetY": 0,
+              "maxSpeed": 100,
+              "rotateObject": true,
+              "smoothingMaxCellGap": 1
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "content": {
+            "width": 1,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "blackpatch_Front",
+            "backFaceResourceName": "blackpatch_Front",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "blackpatch_Front",
+            "rightFaceResourceName": "blackpatch_Front",
+            "topFaceResourceName": "blackpatch_Front",
+            "bottomFaceResourceName": "blackpatch_Front",
+            "frontFaceVisible": false,
+            "backFaceVisible": false,
+            "leftFaceVisible": false,
+            "rightFaceVisible": true,
+            "topFaceVisible": false,
+            "bottomFaceVisible": false,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1902,6 +2015,9 @@
           },
           {
             "objectName": "redpatchsquare"
+          },
+          {
+            "objectName": "blackpatch"
           },
           {
             "objectName": "Red_Cube"
