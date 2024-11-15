@@ -606,6 +606,15 @@
         "name": "redpatchsquare2.png2",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Sprite-0001.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Sprite-0001",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -637,7 +646,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.5290357402157043,
+        "zoomFactor": 0.36732575450589644,
         "windowMask": false
       },
       "objectsGroups": [
@@ -967,15 +976,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 625,
           "keepRatio": true,
           "layer": "UI",
           "name": "gunviewmodel",
           "persistentUuid": "236d409f-717a-4c5b-a315-10c888245c0d",
-          "width": 0,
-          "x": 475,
-          "y": 125,
+          "width": 1025,
+          "x": 275,
+          "y": 100,
           "zOrder": 24,
           "numberProperties": [],
           "stringProperties": [],
@@ -1646,16 +1656,17 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "",
+              "name": "Sprite-0001",
               "useMultipleDirections": false,
               "directions": [
                 {
                   "looping": false,
+                  "metadata": "{\"pskl\":{}}",
                   "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "Sprite-0001.png",
+                      "image": "Sprite-0001",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -1671,20 +1682,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 561,
-                            "y": 285
+                            "x": 1245,
+                            "y": 606
                           },
                           {
-                            "x": 800,
-                            "y": 285
+                            "x": 2100,
+                            "y": 606
                           },
                           {
-                            "x": 800,
-                            "y": 600
+                            "x": 2100,
+                            "y": 1300
                           },
                           {
-                            "x": 561,
-                            "y": 600
+                            "x": 1245,
+                            "y": 1300
                           }
                         ]
                       ]
