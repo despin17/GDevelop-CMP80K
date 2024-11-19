@@ -2207,7 +2207,7 @@
               "OffsetY": 0,
               "JustSpawnedAnObject": false,
               "MaxQuantityReached": false,
-              "MaxQuantity": 1,
+              "MaxQuantity": 2,
               "SpawnerCapacity": 0,
               "UnlimitedCapacity": true,
               "RandomPosition": true
@@ -3445,6 +3445,15 @@
                 "deleteID",
                 "=",
                 "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"spawntick\""
               ]
             }
           ]
