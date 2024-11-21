@@ -897,6 +897,92 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/f0ede8843d544f6e84bc09299a8aabffbce558966f25af98f7b47ab1648217ce_Blue Button_Pressed.png",
           "name": "Blue Button_Pressed.png"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BRICK_1A2.PNG2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "BRICK_1A2.PNG2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BRICK_1A2.PNG3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "BRICK_1A2.PNG3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/assets_Floor.png2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{},\"localFilePath\":\"assets/assets_Floor.png2.png\"}",
+        "name": "assets\\Floor.png2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Red Button With Shadow_Hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Red Button With Shadow_Hovered.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/71ee2c8d8b72808c7f084252cd36c80c44bc07655a3729e5fe7459c634007e8a_Red Button With Shadow_Hovered.png",
+          "name": "Red Button With Shadow_Hovered.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Red Button With Shadow_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Red Button With Shadow_Idle.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/6c6bf020fb86d99a9ecc993f8b90064d73d757bc2408050cf353c84bc36f6be2_Red Button With Shadow_Idle.png",
+          "name": "Red Button With Shadow_Idle.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Red Button With Shadow_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Red Button With Shadow_Pressed.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/b9ce526450d48adedb6875043465ae168fff1f6b01dd1ff7f43b7e7c1568cc21_Red Button With Shadow_Pressed.png",
+          "name": "Red Button With Shadow_Pressed.png"
+        }
+      },
+      {
+        "file": "assets/CantoraOne-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "CantoraOne-Regular.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
+          "name": "CantoraOne-Regular.ttf"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BRICK_1A2.PNG4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "BRICK_1A2.PNG4",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -928,7 +1014,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.8700232859857834,
+        "zoomFactor": 0.9610368693715369,
         "windowMask": false
       },
       "objectsGroups": [
@@ -973,6 +1059,9 @@
             },
             {
               "name": "BrickWalls"
+            },
+            {
+              "name": "BrickDoor"
             }
           ]
         }
@@ -1047,6 +1136,11 @@
           "name": "PauseEVERYTHING",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "FireRate",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -1236,7 +1330,7 @@
           "layer": "",
           "name": "BrickWalls",
           "persistentUuid": "36004b6a-54c6-4e74-809a-0e650723ff4a",
-          "width": 175,
+          "width": 150,
           "x": 25,
           "y": 700,
           "zOrder": 33,
@@ -1297,23 +1391,6 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 125,
-          "height": 125,
-          "keepRatio": true,
-          "layer": "",
-          "name": "spawnpointA",
-          "persistentUuid": "5dae44fd-5b04-43a4-bbd5-0343bef111d8",
-          "width": 500,
-          "x": 625,
-          "y": 200,
-          "zOrder": 37,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "keepRatio": true,
@@ -1324,6 +1401,107 @@
           "x": 1241,
           "y": 375,
           "zOrder": 38,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 325,
+          "height": 500,
+          "keepRatio": true,
+          "layer": "",
+          "name": "spawnpointA",
+          "persistentUuid": "47830f34-b1b5-4c58-a2ac-77b4c1bc7509",
+          "width": 775,
+          "x": 350,
+          "y": 175,
+          "zOrder": 39,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 400,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickWalls",
+          "persistentUuid": "40c110e5-ef47-47ce-951e-0301febf4821",
+          "width": 100,
+          "x": -75,
+          "y": 800,
+          "zOrder": 40,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 400,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickWalls",
+          "persistentUuid": "4ccf2bb6-b029-4ac1-bdbe-7bef98741572",
+          "width": 100,
+          "x": 450,
+          "y": 800,
+          "zOrder": 40,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 100,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickWalls",
+          "persistentUuid": "c6663e21-dce3-4a3d-a539-59be18a99542",
+          "width": 625,
+          "x": -75,
+          "y": 1200,
+          "zOrder": 40,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickWalls",
+          "persistentUuid": "ace06c3a-4023-4be8-9b7d-d7aaf142a680",
+          "width": 0,
+          "x": 200,
+          "y": 950,
+          "zOrder": 41,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 100,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickDoor",
+          "persistentUuid": "8eea5a96-d43a-46fc-8ecb-6f2b4306b1b4",
+          "width": 175,
+          "x": 175,
+          "y": 700,
+          "zOrder": 42,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1413,8 +1591,8 @@
             "depth": 100,
             "enableTextureTransparency": false,
             "facesOrientation": "Y",
-            "frontFaceResourceName": "assets\\Floor.png",
-            "backFaceResourceName": "assets\\Ceiling.png",
+            "frontFaceResourceName": "assets\\Floor.png2",
+            "backFaceResourceName": "assets\\Floor.png2",
             "backFaceUpThroughWhichAxisRotation": "X",
             "leftFaceResourceName": "Black.png",
             "rightFaceResourceName": "Black.png",
@@ -2264,13 +2442,13 @@
             "depth": 150,
             "enableTextureTransparency": false,
             "facesOrientation": "Y",
-            "frontFaceResourceName": "BRICK_1A2.PNG",
-            "backFaceResourceName": "BRICK_1A2.PNG",
+            "frontFaceResourceName": "BRICK_1A2.PNG2",
+            "backFaceResourceName": "BRICK_1A2.PNG2",
             "backFaceUpThroughWhichAxisRotation": "X",
-            "leftFaceResourceName": "BRICK_1A.PNG",
-            "rightFaceResourceName": "BRICK_1A.PNG",
-            "topFaceResourceName": "BRICK_1A2.PNG",
-            "bottomFaceResourceName": "BRICK_1A2.PNG",
+            "leftFaceResourceName": "BRICK_1A2.PNG3",
+            "rightFaceResourceName": "BRICK_1A2.PNG2",
+            "topFaceResourceName": "BRICK_1A2.PNG2",
+            "bottomFaceResourceName": "BRICK_1A2.PNG2",
             "frontFaceVisible": true,
             "backFaceVisible": true,
             "leftFaceVisible": true,
@@ -2309,8 +2487,8 @@
           ],
           "content": {
             "width": 25,
-            "height": 25,
-            "depth": 125,
+            "height": 200,
+            "depth": 325,
             "enableTextureTransparency": true,
             "facesOrientation": "Y",
             "frontFaceResourceName": "spawnpointA_Front",
@@ -2495,6 +2673,185 @@
               "width": 256
             }
           }
+        },
+        {
+          "assetStoreId": "5faf2b0415c271fa6e747283ed36297a95f04d2b6c477a7b011775fa6fb444ee",
+          "name": "RedButtonWithShadow",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 3,
+            "BottomPadding": 32,
+            "TopPadding": 32,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 16,
+              "height": 69,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Red Button With Shadow_Hovered.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 192
+            },
+            "Idle": {
+              "bottomMargin": 16,
+              "height": 69,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Red Button With Shadow_Idle.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 192
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "BUTTON",
+              "font": "CantoraOne-Regular.ttf",
+              "textAlignment": "center",
+              "characterSize": 40,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "BUTTON",
+                "font": "CantoraOne-Regular.ttf",
+                "textAlignment": "center",
+                "verticalTextAlignment": "top",
+                "characterSize": 40,
+                "color": "255;255;255"
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 69,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Red Button With Shadow_Pressed.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 192
+            }
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BrickDoor",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
+            }
+          ],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 150,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "BRICK_1A2.PNG4",
+            "rightFaceResourceName": "BRICK_1A2.PNG4",
+            "topFaceResourceName": "BRICK_1A2.PNG4",
+            "bottomFaceResourceName": "BRICK_1A2.PNG4",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": true,
+            "backFaceResourceRepeat": true,
+            "leftFaceResourceRepeat": true,
+            "rightFaceResourceRepeat": true,
+            "topFaceResourceRepeat": true,
+            "bottomFaceResourceRepeat": true,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "height": 32,
+          "name": "textback",
+          "texture": "",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 64,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "doortext",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Open Door (G)\nCost: 50 Patches",
+          "font": "CantoraOne-Regular.ttf",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Open Door (G)\nCost: 50 Patches",
+            "font": "CantoraOne-Regular.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "color": "0;0;0"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -2505,6 +2862,12 @@
           },
           {
             "objectName": "BrickWalls"
+          },
+          {
+            "objectName": "BrickDoor"
+          },
+          {
+            "objectName": "textback"
           },
           {
             "objectName": "Barriers"
@@ -2571,6 +2934,12 @@
           },
           {
             "objectName": "BlueButton"
+          },
+          {
+            "objectName": "RedButtonWithShadow"
+          },
+          {
+            "objectName": "doortext"
           }
         ]
       },
@@ -2654,6 +3023,16 @@
               "parameters": [
                 "",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FireRate",
+                "=",
+                "0.36"
               ]
             }
           ],
@@ -3051,7 +3430,7 @@
                         "",
                         "\"FireRate\"",
                         ">",
-                        "0.03"
+                        "FireRate"
                       ]
                     },
                     {
@@ -3876,6 +4255,14 @@
           "actions": [
             {
               "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "2"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -3901,8 +4288,8 @@
               "parameters": [
                 "",
                 "BlueButton",
-                "1410",
-                "200",
+                "1250",
+                "70",
                 "\"Crosshair\""
               ]
             },
@@ -3918,11 +4305,46 @@
             },
             {
               "type": {
-                "value": "MousePointerLock::ExitPointerLock"
+                "value": "Create"
               },
               "parameters": [
                 "",
+                "RedButtonWithShadow",
+                "1500",
+                "250",
+                "\"Crosshair\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+              },
+              "parameters": [
+                "RedButtonWithShadow",
+                "\"Upgrade Fire Rate  50 Patches\"",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetX"
+              },
+              "parameters": [
+                "RedButtonWithShadow",
+                "Scale",
+                "=",
+                "1.75"
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetY"
+              },
+              "parameters": [
+                "RedButtonWithShadow",
+                "Scale",
+                "=",
+                "0.65"
               ]
             },
             {
@@ -3932,6 +4354,15 @@
               "parameters": [
                 "PauseEVERYTHING",
                 "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MousePointerLock::ExitPointerLock"
+              },
+              "parameters": [
+                "",
                 ""
               ]
             }
@@ -4100,6 +4531,15 @@
             },
             {
               "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "RedButtonWithShadow",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "SetBooleanVariable"
               },
               "parameters": [
@@ -4115,6 +4555,231 @@
               "parameters": [
                 "",
                 "\"redTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "PauseEVERYTHING",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "RedButtonWithShadow",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "FireRate",
+                ">=",
+                "0.06"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                ">=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FireRate",
+                "-",
+                "0.07"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                "-",
+                "50"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Door Opening"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Camera",
+                "BrickDoor",
+                "200",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "doortext",
+                "1250",
+                "70",
+                "\"Crosshair\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Camera",
+                "BrickDoor",
+                "200",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                ">=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "g"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "BrickDoor",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "doortext",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                "-",
+                "50"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "Distance"
+              },
+              "parameters": [
+                "Camera",
+                "BrickDoor",
+                "200",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "doortext",
+                ""
               ]
             }
           ]
