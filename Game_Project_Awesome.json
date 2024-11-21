@@ -993,6 +993,15 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "texture_12.png.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"texture_12.png.png\",\"extension\":\".png\",\"pskl\":{}}",
+        "name": "texture_12.png.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1024,7 +1033,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.9934433498260249,
+        "zoomFactor": 0.6897782140104971,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1641,11 +1650,11 @@
             "depth": 100,
             "enableTextureTransparency": false,
             "facesOrientation": "Y",
-            "frontFaceResourceName": "texture_12.png",
+            "frontFaceResourceName": "texture_12.png.png",
             "backFaceResourceName": "Black.png",
             "backFaceUpThroughWhichAxisRotation": "X",
-            "leftFaceResourceName": "texture_12.png",
-            "rightFaceResourceName": "texture_12.png",
+            "leftFaceResourceName": "texture_12.png.png",
+            "rightFaceResourceName": "texture_12.png.png",
             "topFaceResourceName": "Black.png",
             "bottomFaceResourceName": "Black.png",
             "frontFaceVisible": true,
