@@ -983,6 +983,16 @@
         "name": "BRICK_1A2.PNG4",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "actual club banger.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "actual club banger.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1014,7 +1024,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.9610368693715369,
+        "zoomFactor": 0.9934433498260249,
         "windowMask": false
       },
       "objectsGroups": [
@@ -4907,6 +4917,44 @@
                 "Text",
                 "=",
                 "\"Patches: \" + PatchCollected"
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Music",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusic"
+              },
+              "parameters": [
+                "",
+                "actual club banger.mp3",
+                "yes",
+                "20",
+                ""
               ]
             }
           ]
