@@ -1489,6 +1489,19 @@
         "name": "SEAM Strike (1).png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Health Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Health Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Western FPS 2D/Hud/Bar/ec41092214e9b23d9992e2885835085c8e5457268b3e054599e799cc8074fc52_Health Bar.png",
+          "name": "Health Bar.png"
+        }
       }
     ],
     "resourceFolders": []
@@ -2353,7 +2366,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.3673257545059074,
+        "zoomFactor": 0.7370816317994556,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2562,51 +2575,6 @@
           "x": 1543,
           "y": 232,
           "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 100,
-          "layer": "UI",
-          "name": "TimeLimit",
-          "persistentUuid": "91bfefbf-52fa-4ba9-abc2-2c5f9f140615",
-          "width": 125,
-          "x": 575,
-          "y": 25,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "UI",
-          "name": "ScoreLabel",
-          "persistentUuid": "c857f3b7-db6a-48ca-ac35-0398687b9d71",
-          "width": 0,
-          "x": 0,
-          "y": 625,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "UI",
-          "name": "Accuracy",
-          "persistentUuid": "c02f52ab-7531-47a0-859b-0c03bff46dd9",
-          "width": 0,
-          "x": 0,
-          "y": 675,
-          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2998,7 +2966,36 @@
           "type": "Scene3D::Cube3DObject",
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Health",
+              "type": "Health::Health",
+              "Health": 100,
+              "CurrentHealth": 0,
+              "MaxHealth": 100,
+              "DamageCooldown": 0,
+              "AllowOverHealing": false,
+              "IsHealthJustDamaged": false,
+              "DamageToBeApplied": 0,
+              "HitAtLeastOnce": false,
+              "ChanceToDodge": 0,
+              "IsJustDodged": false,
+              "HealToBeApplied": 0,
+              "HealthRegenRate": 1,
+              "HealthRegenDelay": 5,
+              "IsJustHealed": false,
+              "CurrentShieldPoints": 2.0247e-320,
+              "MaxShieldPoints": 0,
+              "ShieldDuration": 5,
+              "ShieldRegenRate": 0,
+              "BlockExcessDamage": false,
+              "ShieldRegenDelay": 0,
+              "IsShieldJustDamaged": false,
+              "ShieldDamageTaken": 2.0247e-320,
+              "FlatDamageReduction": 0,
+              "PercentDamageReduction": 0
+            }
+          ],
           "content": {
             "width": 100,
             "height": 100,
@@ -4476,6 +4473,57 @@
             "bottomFaceResourceRepeat": false,
             "materialType": "Basic"
           }
+        },
+        {
+          "assetStoreId": "0ad03c70a5c5284cc85170b3852e425db0f4deed8225b1b10722ef26902186d8",
+          "bottomMargin": 2,
+          "height": 9,
+          "leftMargin": 3,
+          "name": "HealthBar",
+          "rightMargin": 3,
+          "texture": "Health Bar.png",
+          "tiled": true,
+          "topMargin": 4,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 78,
+          "variables": [
+            {
+              "name": "playerhealth",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Health",
+              "type": "Health::Health",
+              "Health": 100,
+              "CurrentHealth": 0,
+              "MaxHealth": 100,
+              "DamageCooldown": 0,
+              "AllowOverHealing": false,
+              "IsHealthJustDamaged": false,
+              "DamageToBeApplied": 0,
+              "HitAtLeastOnce": false,
+              "ChanceToDodge": 0,
+              "IsJustDodged": false,
+              "HealToBeApplied": 0,
+              "HealthRegenRate": 0,
+              "HealthRegenDelay": 0,
+              "IsJustHealed": false,
+              "CurrentShieldPoints": 2.0247e-320,
+              "MaxShieldPoints": 0,
+              "ShieldDuration": 5,
+              "ShieldRegenRate": 0,
+              "BlockExcessDamage": false,
+              "ShieldRegenDelay": 0,
+              "IsShieldJustDamaged": false,
+              "ShieldDamageTaken": 2.0247e-320,
+              "FlatDamageReduction": 0,
+              "PercentDamageReduction": 0
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4573,6 +4621,9 @@
           },
           {
             "objectName": "doortext"
+          },
+          {
+            "objectName": "HealthBar"
           }
         ]
       },
@@ -6665,7 +6716,7 @@
           "isLocked": false,
           "name": "UI",
           "renderingType": "2d",
-          "visibility": false,
+          "visibility": true,
           "cameras": [],
           "effects": []
         }
