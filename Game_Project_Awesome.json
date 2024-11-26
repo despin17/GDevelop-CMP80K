@@ -2416,6 +2416,12 @@
             },
             {
               "name": "redpatchsquare"
+            },
+            {
+              "name": "Walls"
+            },
+            {
+              "name": "BrickWalls"
             }
           ]
         },
@@ -5986,6 +5992,26 @@
                             "RoundStart",
                             "True"
                           ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickedInstancesCount"
+                          },
+                          "parameters": [
+                            "Walls",
+                            "=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickedInstancesCount"
+                          },
+                          "parameters": [
+                            "BrickWalls",
+                            "=",
+                            "0"
+                          ]
                         }
                       ],
                       "actions": [
@@ -6059,79 +6085,24 @@
                                 "value": "PickedInstancesCount"
                               },
                               "parameters": [
-                                "StartRound",
+                                "Walls",
                                 "=",
-                                "1"
+                                "0"
                               ]
                             },
                             {
                               "type": {
-                                "value": "BuiltinCommonInstructions::Once"
-                              },
-                              "parameters": []
-                            }
-                          ],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "SetBooleanVariable"
+                                "value": "PickedInstancesCount"
                               },
                               "parameters": [
-                                "RoundStart",
-                                "True"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Delete"
-                              },
-                              "parameters": [
-                                "StartRound",
-                                "\"GameTimer\""
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [
-                            {
-                              "type": {
-                                "value": "BooleanVariable"
-                              },
-                              "parameters": [
-                                "RoundStart",
-                                "True"
+                                "BrickWalls",
+                                "=",
+                                "0"
                               ]
                             }
                           ],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "PopUpText",
-                                "Crosshair.X()+RandomInRange(-20,20)",
-                                "Crosshair.Y()+RandomInRange(-20,20)",
-                                "\"Crosshair\""
-                              ]
-                            }
-                          ],
+                          "actions": [],
                           "events": [
-                            {
-                              "type": "BuiltinCommonInstructions::Comment",
-                              "color": {
-                                "b": 109,
-                                "g": 230,
-                                "r": 255,
-                                "textB": 0,
-                                "textG": 0,
-                                "textR": 0
-                              },
-                              "comment": "Changing the score and PopUpText based on the target that was picked"
-                            },
                             {
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
@@ -6140,33 +6111,19 @@
                                     "value": "PickedInstancesCount"
                                   },
                                   "parameters": [
-                                    "redpatchsquare",
+                                    "StartRound",
                                     "=",
                                     "1"
                                   ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
                                 }
                               ],
                               "actions": [
-                                {
-                                  "type": {
-                                    "value": "SetNumberVariable"
-                                  },
-                                  "parameters": [
-                                    "Score",
-                                    "+",
-                                    "5"
-                                  ]
-                                },
-                                {
-                                  "type": {
-                                    "value": "BitmapText::BitmapTextObject::SetText"
-                                  },
-                                  "parameters": [
-                                    "PopUpText",
-                                    "=",
-                                    "\"+5\""
-                                  ]
-                                },
                                 {
                                   "type": {
                                     "value": "SetBooleanVariable"
@@ -6178,61 +6135,176 @@
                                 },
                                 {
                                   "type": {
-                                    "value": "Health::Health::Hit"
+                                    "value": "Delete"
                                   },
                                   "parameters": [
-                                    "redpatchsquare",
-                                    "Health",
-                                    "5",
-                                    "",
-                                    "",
-                                    ""
+                                    "StartRound",
+                                    "\"GameTimer\""
                                   ]
                                 }
                               ]
                             },
                             {
                               "type": "BuiltinCommonInstructions::Standard",
-                              "conditions": [],
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "BooleanVariable"
+                                  },
+                                  "parameters": [
+                                    "RoundStart",
+                                    "True"
+                                  ]
+                                }
+                              ],
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "BitmapText::BitmapTextObject::SetText"
+                                    "value": "Create"
                                   },
                                   "parameters": [
-                                    "ScoreLabel",
-                                    "=",
-                                    "\"Score: \" + Score"
-                                  ]
-                                },
-                                {
-                                  "type": {
-                                    "value": "Tween::AddObjectOpacityTween"
-                                  },
-                                  "parameters": [
-                                    "PopUpText",
-                                    "Tween",
-                                    "\"Fade\"",
-                                    "0",
-                                    "\"linear\"",
-                                    "500",
-                                    ""
-                                  ]
-                                },
-                                {
-                                  "type": {
-                                    "value": "ShakeObject::ShakeObject_PositionAngle::ShakeObject_PositionAngle"
-                                  },
-                                  "parameters": [
-                                    "PopUpText",
-                                    "ShakeObject_PositionAngle",
-                                    "4",
-                                    "150",
-                                    "-300",
-                                    "-150",
-                                    "3",
                                     "",
-                                    ""
+                                    "PopUpText",
+                                    "Crosshair.X()+RandomInRange(-20,20)",
+                                    "Crosshair.Y()+RandomInRange(-20,20)",
+                                    "\"Crosshair\""
+                                  ]
+                                }
+                              ],
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Comment",
+                                  "color": {
+                                    "b": 109,
+                                    "g": 230,
+                                    "r": 255,
+                                    "textB": 0,
+                                    "textG": 0,
+                                    "textR": 0
+                                  },
+                                  "comment": "Changing the score and PopUpText based on the target that was picked"
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "PickedInstancesCount"
+                                      },
+                                      "parameters": [
+                                        "Walls",
+                                        "=",
+                                        "0"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "PickedInstancesCount"
+                                          },
+                                          "parameters": [
+                                            "redpatchsquare",
+                                            "=",
+                                            "1"
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Score",
+                                            "+",
+                                            "5"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BitmapText::BitmapTextObject::SetText"
+                                          },
+                                          "parameters": [
+                                            "PopUpText",
+                                            "=",
+                                            "\"+5\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "RoundStart",
+                                            "True"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "Health::Health::Hit"
+                                          },
+                                          "parameters": [
+                                            "redpatchsquare",
+                                            "Health",
+                                            "5",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "BitmapText::BitmapTextObject::SetText"
+                                          },
+                                          "parameters": [
+                                            "ScoreLabel",
+                                            "=",
+                                            "\"Score: \" + Score"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "Tween::AddObjectOpacityTween"
+                                          },
+                                          "parameters": [
+                                            "PopUpText",
+                                            "Tween",
+                                            "\"Fade\"",
+                                            "0",
+                                            "\"linear\"",
+                                            "500",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "ShakeObject::ShakeObject_PositionAngle::ShakeObject_PositionAngle"
+                                          },
+                                          "parameters": [
+                                            "PopUpText",
+                                            "ShakeObject_PositionAngle",
+                                            "4",
+                                            "150",
+                                            "-300",
+                                            "-150",
+                                            "3",
+                                            "",
+                                            ""
+                                          ]
+                                        }
+                                      ]
+                                    }
                                   ]
                                 }
                               ]
