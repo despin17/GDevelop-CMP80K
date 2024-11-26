@@ -2401,7 +2401,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.3325387091251037,
+        "zoomFactor": 0.15002679255026838,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2448,7 +2448,27 @@
               "name": "BrickWalls"
             },
             {
-              "name": "BrickDoor"
+              "name": "BrickDoorA"
+            }
+          ]
+        },
+        {
+          "name": "doors",
+          "objects": [
+            {
+              "name": "BrickDoorA"
+            },
+            {
+              "name": "BrickDoorB"
+            },
+            {
+              "name": "BrickDoorC"
+            },
+            {
+              "name": "BrickDoorD"
+            },
+            {
+              "name": "BrickDoorE"
             }
           ]
         }
@@ -2805,7 +2825,7 @@
           "height": 100,
           "keepRatio": true,
           "layer": "",
-          "name": "BrickDoor",
+          "name": "BrickDoorA",
           "persistentUuid": "8eea5a96-d43a-46fc-8ecb-6f2b4306b1b4",
           "width": 175,
           "x": 175,
@@ -2870,23 +2890,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 150,
-          "height": 200,
-          "keepRatio": true,
-          "layer": "",
-          "name": "BrickDoor",
-          "persistentUuid": "806025d5-e998-452e-a8e4-5483d6d7aee5",
-          "width": 100,
-          "x": 900,
-          "y": 1000,
-          "zOrder": 42,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 150,
           "height": 1550,
           "keepRatio": true,
           "layer": "",
@@ -2936,57 +2939,6 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 150,
-          "height": 100,
-          "keepRatio": true,
-          "layer": "",
-          "name": "BrickDoor",
-          "persistentUuid": "032aa030-84a1-49ac-9b01-0f96a3cbc208",
-          "width": 150,
-          "x": 1350,
-          "y": 900,
-          "zOrder": 42,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 150,
-          "height": 200,
-          "keepRatio": true,
-          "layer": "",
-          "name": "BrickDoor",
-          "persistentUuid": "66083a2f-2e9a-4e1d-88b1-166f911a250a",
-          "width": 100,
-          "x": 1150,
-          "y": 150,
-          "zOrder": 42,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 150,
-          "height": 200,
-          "keepRatio": true,
-          "layer": "",
-          "name": "BrickDoor",
-          "persistentUuid": "e8a72ccb-dcd3-4b7b-8edf-5cb87936ce34",
-          "width": 100,
-          "x": 375,
-          "y": 1400,
-          "zOrder": 42,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "keepRatio": true,
@@ -3014,6 +2966,125 @@
           "x": -2025,
           "y": -1100,
           "zOrder": 46,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 325,
+          "height": 600,
+          "keepRatio": true,
+          "layer": "",
+          "name": "spawnpointB",
+          "persistentUuid": "4ff4c2ca-4e09-4d9f-9e57-957e33c7c532",
+          "width": 300,
+          "x": 1275,
+          "y": 175,
+          "zOrder": 47,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 325,
+          "height": 350,
+          "keepRatio": true,
+          "layer": "",
+          "name": "spawnpointC",
+          "persistentUuid": "b478cea3-4ccf-49f4-b767-18db2436b165",
+          "width": 825,
+          "x": 50,
+          "y": 825,
+          "zOrder": 48,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 325,
+          "height": 550,
+          "keepRatio": true,
+          "layer": "",
+          "name": "spawnpointD",
+          "persistentUuid": "caf5517e-191b-4801-809e-d9a9e3c7a83b",
+          "width": 450,
+          "x": 1025,
+          "y": 1025,
+          "zOrder": 49,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 200,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickDoorB",
+          "persistentUuid": "4b815c3d-a91b-41ee-bb7c-341ca6c77469",
+          "width": 100,
+          "x": 1150,
+          "y": 150,
+          "zOrder": 50,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 100,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickDoorC",
+          "persistentUuid": "2828e009-2441-419b-a82f-6bef1a4d7a94",
+          "width": 150,
+          "x": 1350,
+          "y": 900,
+          "zOrder": 51,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 200,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickDoorD",
+          "persistentUuid": "26bb6b71-599e-4b33-8083-0450bf30e545",
+          "width": 100,
+          "x": 900,
+          "y": 1000,
+          "zOrder": 52,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 150,
+          "height": 200,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BrickDoorE",
+          "persistentUuid": "8349eb74-53bf-4a05-8955-691e183dfc93",
+          "width": 100,
+          "x": 375,
+          "y": 1400,
+          "zOrder": 53,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4009,7 +4080,13 @@
           "assetStoreId": "",
           "name": "spawnpointA",
           "type": "Scene3D::Cube3DObject",
-          "variables": [],
+          "variables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 1
+            }
+          ],
           "effects": [],
           "behaviors": [
             {
@@ -4301,7 +4378,7 @@
         },
         {
           "assetStoreId": "",
-          "name": "BrickDoor",
+          "name": "BrickDoorA",
           "type": "Scene3D::Cube3DObject",
           "variables": [],
           "effects": [],
@@ -4825,6 +4902,339 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "spawnpointB",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ObjectSpawner",
+              "type": "ObjectSpawner::ObjectSpawner",
+              "SpawnPeriod": 4,
+              "OffsetX": 0,
+              "OffsetY": 0,
+              "JustSpawnedAnObject": false,
+              "MaxQuantityReached": false,
+              "MaxQuantity": 2,
+              "SpawnerCapacity": 0,
+              "UnlimitedCapacity": true,
+              "RandomPosition": true
+            }
+          ],
+          "content": {
+            "width": 25,
+            "height": 200,
+            "depth": 325,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "spawnpointA_Front",
+            "backFaceResourceName": "",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "",
+            "rightFaceResourceName": "",
+            "topFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "frontFaceVisible": true,
+            "backFaceVisible": false,
+            "leftFaceVisible": false,
+            "rightFaceVisible": false,
+            "topFaceVisible": false,
+            "bottomFaceVisible": false,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "spawnpointC",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ObjectSpawner",
+              "type": "ObjectSpawner::ObjectSpawner",
+              "SpawnPeriod": 4,
+              "OffsetX": 0,
+              "OffsetY": 0,
+              "JustSpawnedAnObject": false,
+              "MaxQuantityReached": false,
+              "MaxQuantity": 2,
+              "SpawnerCapacity": 0,
+              "UnlimitedCapacity": true,
+              "RandomPosition": true
+            }
+          ],
+          "content": {
+            "width": 25,
+            "height": 200,
+            "depth": 325,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "spawnpointA_Front",
+            "backFaceResourceName": "",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "",
+            "rightFaceResourceName": "",
+            "topFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "frontFaceVisible": true,
+            "backFaceVisible": false,
+            "leftFaceVisible": false,
+            "rightFaceVisible": false,
+            "topFaceVisible": false,
+            "bottomFaceVisible": false,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "spawnpointD",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ObjectSpawner",
+              "type": "ObjectSpawner::ObjectSpawner",
+              "SpawnPeriod": 4,
+              "OffsetX": 0,
+              "OffsetY": 0,
+              "JustSpawnedAnObject": false,
+              "MaxQuantityReached": false,
+              "MaxQuantity": 2,
+              "SpawnerCapacity": 0,
+              "UnlimitedCapacity": true,
+              "RandomPosition": true
+            }
+          ],
+          "content": {
+            "width": 25,
+            "height": 200,
+            "depth": 325,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "spawnpointA_Front",
+            "backFaceResourceName": "",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "",
+            "rightFaceResourceName": "",
+            "topFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "frontFaceVisible": true,
+            "backFaceVisible": false,
+            "leftFaceVisible": false,
+            "rightFaceVisible": false,
+            "topFaceVisible": false,
+            "bottomFaceVisible": false,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BrickDoorB",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
+            }
+          ],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 150,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "BRICK_1A2.PNG4",
+            "rightFaceResourceName": "BRICK_1A2.PNG4",
+            "topFaceResourceName": "BRICK_1A2.PNG4",
+            "bottomFaceResourceName": "BRICK_1A2.PNG4",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": true,
+            "backFaceResourceRepeat": true,
+            "leftFaceResourceRepeat": true,
+            "rightFaceResourceRepeat": true,
+            "topFaceResourceRepeat": true,
+            "bottomFaceResourceRepeat": true,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BrickDoorC",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
+            }
+          ],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 150,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "BRICK_1A2.PNG4",
+            "rightFaceResourceName": "BRICK_1A2.PNG4",
+            "topFaceResourceName": "BRICK_1A2.PNG4",
+            "bottomFaceResourceName": "BRICK_1A2.PNG4",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": true,
+            "backFaceResourceRepeat": true,
+            "leftFaceResourceRepeat": true,
+            "rightFaceResourceRepeat": true,
+            "topFaceResourceRepeat": true,
+            "bottomFaceResourceRepeat": true,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BrickDoorD",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
+            }
+          ],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 150,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "BRICK_1A2.PNG4",
+            "rightFaceResourceName": "BRICK_1A2.PNG4",
+            "topFaceResourceName": "BRICK_1A2.PNG4",
+            "bottomFaceResourceName": "BRICK_1A2.PNG4",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": true,
+            "backFaceResourceRepeat": true,
+            "leftFaceResourceRepeat": true,
+            "rightFaceResourceRepeat": true,
+            "topFaceResourceRepeat": true,
+            "bottomFaceResourceRepeat": true,
+            "materialType": "Basic"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BrickDoorE",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
+            }
+          ],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 150,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceResourceName": "BRICK_1A2.PNG4",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "BRICK_1A2.PNG4",
+            "rightFaceResourceName": "BRICK_1A2.PNG4",
+            "topFaceResourceName": "BRICK_1A2.PNG4",
+            "bottomFaceResourceName": "BRICK_1A2.PNG4",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": true,
+            "backFaceResourceRepeat": true,
+            "leftFaceResourceRepeat": true,
+            "rightFaceResourceRepeat": true,
+            "topFaceResourceRepeat": true,
+            "bottomFaceResourceRepeat": true,
+            "materialType": "Basic"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -4837,7 +5247,19 @@
             "objectName": "BrickWalls"
           },
           {
-            "objectName": "BrickDoor"
+            "objectName": "BrickDoorA"
+          },
+          {
+            "objectName": "BrickDoorB"
+          },
+          {
+            "objectName": "BrickDoorC"
+          },
+          {
+            "objectName": "BrickDoorD"
+          },
+          {
+            "objectName": "BrickDoorE"
           },
           {
             "objectName": "textback"
@@ -4886,6 +5308,15 @@
           },
           {
             "objectName": "spawnpointA"
+          },
+          {
+            "objectName": "spawnpointB"
+          },
+          {
+            "objectName": "spawnpointC"
+          },
+          {
+            "objectName": "spawnpointD"
           },
           {
             "objectName": "yellowpatch"
@@ -6066,6 +6497,18 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "SpawnpointA\n"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6136,6 +6579,118 @@
                   },
                   "parameters": [
                     "spawnpointA",
+                    "ObjectSpawner",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MonstersAlive",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "SpawnpointB\n"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"redTimer\"",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "RoundStart",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "Visible"
+              },
+              "parameters": [
+                "BrickDoorB"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+              },
+              "parameters": [
+                "spawnpointB",
+                "ObjectSpawner",
+                "MonsterRate",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+              },
+              "parameters": [
+                "spawnpointB",
+                "ObjectSpawner",
+                "=",
+                "MaxMonsters",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+              },
+              "parameters": [
+                "spawnpointB",
+                "ObjectSpawner",
+                "redpatchsquare",
+                "spawnpointA.Y()"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                  },
+                  "parameters": [
+                    "spawnpointB",
                     "ObjectSpawner",
                     ""
                   ]
@@ -6782,7 +7337,7 @@
               },
               "parameters": [
                 "Camera",
-                "BrickDoor",
+                "doors",
                 "200",
                 ""
               ]
@@ -6818,7 +7373,7 @@
               },
               "parameters": [
                 "Camera",
-                "BrickDoor",
+                "doors",
                 "200",
                 ""
               ]
@@ -6852,10 +7407,18 @@
           "actions": [
             {
               "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "doors"
+              ]
+            },
+            {
+              "type": {
                 "value": "Delete"
               },
               "parameters": [
-                "BrickDoor",
+                "doors",
                 ""
               ]
             },
@@ -6890,7 +7453,7 @@
               },
               "parameters": [
                 "Camera",
-                "BrickDoor",
+                "doors",
                 "200",
                 ""
               ]
@@ -7184,7 +7747,7 @@
           "isLocked": false,
           "name": "UI",
           "renderingType": "2d",
-          "visibility": true,
+          "visibility": false,
           "cameras": [],
           "effects": []
         }
