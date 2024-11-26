@@ -2401,7 +2401,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.23089183385226883,
+        "zoomFactor": 0.23867758270259903,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2452,9 +2452,6 @@
             },
             {
               "name": "BrickWalls"
-            },
-            {
-              "name": "BrickDoorA"
             }
           ]
         },
@@ -5683,6 +5680,16 @@
                     "walls",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SeparateFromObjects"
+                  },
+                  "parameters": [
+                    "Camera",
+                    "doors",
+                    ""
+                  ]
                 }
               ]
             },
@@ -8157,6 +8164,18 @@
                 "PatchCollected",
                 "-",
                 "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "doors",
+                "=",
+                "10000",
+                "=",
+                "10000"
               ]
             }
           ]
