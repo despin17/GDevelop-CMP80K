@@ -2401,7 +2401,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.15002679255026838,
+        "zoomFactor": 0.23089183385226883,
         "windowMask": false
       },
       "objectsGroups": [
@@ -6634,77 +6634,720 @@
                 "True",
                 ""
               ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "Visible"
-              },
-              "parameters": [
-                "BrickDoorB"
-              ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
-              },
-              "parameters": [
-                "spawnpointB",
-                "ObjectSpawner",
-                "MonsterRate",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
-              },
-              "parameters": [
-                "spawnpointB",
-                "ObjectSpawner",
-                "=",
-                "MaxMonsters",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-              },
-              "parameters": [
-                "spawnpointB",
-                "ObjectSpawner",
-                "redpatchsquare",
-                "spawnpointA.Y()"
-              ]
-            }
-          ],
+          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                    "inverted": true,
+                    "value": "Visible"
                   },
                   "parameters": [
-                    "spawnpointB",
-                    "ObjectSpawner",
-                    ""
+                    "BrickDoorB"
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "SetNumberVariable"
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
                   },
                   "parameters": [
-                    "MonstersAlive",
-                    "+",
-                    "1"
+                    "spawnpointB",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointB",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointB",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Visible"
+                  },
+                  "parameters": [
+                    "BrickDoorC"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+                  },
+                  "parameters": [
+                    "spawnpointB",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointB",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointB",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "SpawnpointC"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"redTimer\"",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "RoundStart",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Visible"
+                  },
+                  "parameters": [
+                    "BrickDoorA"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Visible"
+                  },
+                  "parameters": [
+                    "BrickDoorD"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Visible"
+                  },
+                  "parameters": [
+                    "BrickDoorE"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointC",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "SpawnpointD"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"redTimer\"",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "RoundStart",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Visible"
+                  },
+                  "parameters": [
+                    "BrickDoorC"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Visible"
+                  },
+                  "parameters": [
+                    "BrickDoorD"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Visible"
+                  },
+                  "parameters": [
+                    "BrickDoorE"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "MonsterRate",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "=",
+                    "MaxMonsters",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointD",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MonstersAlive",
+                        "+",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -7365,6 +8008,18 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": ""
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -7411,15 +8066,6 @@
               },
               "parameters": [
                 "doors"
-              ]
-            },
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "doors",
-                ""
               ]
             },
             {
@@ -7747,7 +8393,7 @@
           "isLocked": false,
           "name": "UI",
           "renderingType": "2d",
-          "visibility": false,
+          "visibility": true,
           "cameras": [],
           "effects": []
         }
