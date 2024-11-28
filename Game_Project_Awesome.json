@@ -2401,7 +2401,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.23867758270259903,
+        "zoomFactor": 0.34375202416126144,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2422,6 +2422,18 @@
             },
             {
               "name": "BrickWalls"
+            },
+            {
+              "name": "yellowpatch"
+            },
+            {
+              "name": "greenpatch"
+            },
+            {
+              "name": "bluepatch"
+            },
+            {
+              "name": "whitepatch"
             }
           ]
         },
@@ -2472,6 +2484,43 @@
             },
             {
               "name": "BrickDoorE"
+            }
+          ]
+        },
+        {
+          "name": "Monsters",
+          "objects": [
+            {
+              "name": "redpatchsquare"
+            },
+            {
+              "name": "yellowpatch"
+            },
+            {
+              "name": "greenpatch"
+            },
+            {
+              "name": "bluepatch"
+            },
+            {
+              "name": "whitepatch"
+            }
+          ]
+        },
+        {
+          "name": "spawners",
+          "objects": [
+            {
+              "name": "spawnpointA"
+            },
+            {
+              "name": "spawnpointB"
+            },
+            {
+              "name": "spawnpointC"
+            },
+            {
+              "name": "spawnpointD"
             }
           ]
         }
@@ -2549,6 +2598,56 @@
         },
         {
           "name": "FireRate",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MinSpawnRange",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MaxSpawnRange",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "RedThreshold",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "YellowThreshold",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "GreenThreshold",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "BlueThreshold",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "BlackThreshold",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "WhiteThreshold",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "PurpleThreshold",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "SpawnType",
           "type": "number",
           "value": 0
         }
@@ -2774,14 +2873,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 325,
-          "height": 500,
+          "height": 450,
           "keepRatio": true,
           "layer": "",
           "name": "spawnpointA",
           "persistentUuid": "47830f34-b1b5-4c58-a2ac-77b4c1bc7509",
-          "width": 1075,
-          "x": 50,
-          "y": 175,
+          "width": 1025,
+          "x": 75,
+          "y": 200,
           "zOrder": 39,
           "numberProperties": [],
           "stringProperties": [],
@@ -2977,14 +3076,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 325,
-          "height": 600,
+          "height": 550,
           "keepRatio": true,
           "layer": "",
           "name": "spawnpointB",
           "persistentUuid": "4ff4c2ca-4e09-4d9f-9e57-957e33c7c532",
-          "width": 300,
-          "x": 1275,
-          "y": 175,
+          "width": 250,
+          "x": 1300,
+          "y": 200,
           "zOrder": 47,
           "numberProperties": [],
           "stringProperties": [],
@@ -2994,14 +3093,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 325,
-          "height": 350,
+          "height": 300,
           "keepRatio": true,
           "layer": "",
           "name": "spawnpointC",
           "persistentUuid": "b478cea3-4ccf-49f4-b767-18db2436b165",
-          "width": 825,
-          "x": 50,
-          "y": 825,
+          "width": 775,
+          "x": 75,
+          "y": 850,
           "zOrder": 48,
           "numberProperties": [],
           "stringProperties": [],
@@ -3011,14 +3110,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 325,
-          "height": 550,
+          "height": 500,
           "keepRatio": true,
           "layer": "",
           "name": "spawnpointD",
           "persistentUuid": "caf5517e-191b-4801-809e-d9a9e3c7a83b",
-          "width": 450,
-          "x": 1025,
-          "y": 1025,
+          "width": 400,
+          "x": 1050,
+          "y": 1050,
           "zOrder": 49,
           "numberProperties": [],
           "stringProperties": [],
@@ -3894,9 +3993,10 @@
               "PercentDamageReduction": 0
             },
             {
+              "acceleration": 300,
+              "maxSpeed": 175,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
-              "acceleration": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -3905,7 +4005,6 @@
               "extraBorder": 0,
               "gridOffsetX": 0,
               "gridOffsetY": 0,
-              "maxSpeed": 100,
               "rotateObject": true,
               "smoothingMaxCellGap": 1
             },
@@ -3963,9 +4062,9 @@
             {
               "name": "Health",
               "type": "Health::Health",
-              "Health": 25,
+              "Health": 20,
               "CurrentHealth": 0,
-              "MaxHealth": 25,
+              "MaxHealth": 20,
               "DamageCooldown": 0,
               "AllowOverHealing": false,
               "IsHealthJustDamaged": false,
@@ -3989,18 +4088,18 @@
               "PercentDamageReduction": 0
             },
             {
+              "acceleration": 40,
+              "angularMaxSpeed": 180,
+              "maxSpeed": 250,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
-              "acceleration": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
-              "angularMaxSpeed": 180,
               "cellHeight": 20,
               "cellWidth": 20,
               "extraBorder": 0,
               "gridOffsetX": 0,
               "gridOffsetY": 0,
-              "maxSpeed": 100,
               "rotateObject": true,
               "smoothingMaxCellGap": 1
             },
@@ -4590,9 +4689,9 @@
             {
               "name": "Health",
               "type": "Health::Health",
-              "Health": 25,
+              "Health": 75,
               "CurrentHealth": 0,
-              "MaxHealth": 25,
+              "MaxHealth": 75,
               "DamageCooldown": 0,
               "AllowOverHealing": false,
               "IsHealthJustDamaged": false,
@@ -4616,18 +4715,18 @@
               "PercentDamageReduction": 0
             },
             {
+              "acceleration": 500,
+              "angularMaxSpeed": 120,
+              "maxSpeed": 80,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
-              "acceleration": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
-              "angularMaxSpeed": 180,
               "cellHeight": 20,
               "cellWidth": 20,
               "extraBorder": 0,
               "gridOffsetX": 0,
               "gridOffsetY": 0,
-              "maxSpeed": 100,
               "rotateObject": true,
               "smoothingMaxCellGap": 1
             },
@@ -4687,7 +4786,7 @@
               "type": "Health::Health",
               "Health": 25,
               "CurrentHealth": 0,
-              "MaxHealth": 25,
+              "MaxHealth": 50,
               "DamageCooldown": 0,
               "AllowOverHealing": false,
               "IsHealthJustDamaged": false,
@@ -4696,8 +4795,8 @@
               "ChanceToDodge": 0,
               "IsJustDodged": false,
               "HealToBeApplied": 0,
-              "HealthRegenRate": 0,
-              "HealthRegenDelay": 0,
+              "HealthRegenRate": 25,
+              "HealthRegenDelay": 0.33,
               "IsJustHealed": false,
               "CurrentShieldPoints": 2.0247e-320,
               "MaxShieldPoints": 0,
@@ -4711,9 +4810,10 @@
               "PercentDamageReduction": 0
             },
             {
+              "acceleration": 250,
+              "maxSpeed": 200,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
-              "acceleration": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -4722,7 +4822,6 @@
               "extraBorder": 0,
               "gridOffsetX": 0,
               "gridOffsetY": 0,
-              "maxSpeed": 100,
               "rotateObject": true,
               "smoothingMaxCellGap": 1
             },
@@ -6005,16 +6104,6 @@
                             "value": "PickedInstancesCount"
                           },
                           "parameters": [
-                            "Walls",
-                            "=",
-                            "0"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PickedInstancesCount"
-                          },
-                          "parameters": [
                             "BrickWalls",
                             "=",
                             "0"
@@ -6030,16 +6119,6 @@
                             "Shots",
                             "+",
                             "1"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "BitmapText::BitmapTextObject::SetText"
-                          },
-                          "parameters": [
-                            "Accuracy",
-                            "=",
-                            "\"Accuracy: \" + ToString(ceil(Hits / Shots * 100)) + \"%\""
                           ]
                         }
                       ]
@@ -6066,7 +6145,7 @@
                           "parameters": [
                             "Targets",
                             "Targets",
-                            "1000",
+                            "2000",
                             "Camera.Angle()"
                           ]
                         }
@@ -6087,16 +6166,6 @@
                         {
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
-                            {
-                              "type": {
-                                "value": "PickedInstancesCount"
-                              },
-                              "parameters": [
-                                "Walls",
-                                "=",
-                                "0"
-                              ]
-                            },
                             {
                               "type": {
                                 "value": "PickedInstancesCount"
@@ -6215,7 +6284,7 @@
                                             "value": "PickedInstancesCount"
                                           },
                                           "parameters": [
-                                            "redpatchsquare",
+                                            "Monsters",
                                             "=",
                                             "1"
                                           ]
@@ -6239,7 +6308,7 @@
                                           "parameters": [
                                             "PopUpText",
                                             "=",
-                                            "\"+5\""
+                                            "\"5\""
                                           ]
                                         },
                                         {
@@ -6256,7 +6325,7 @@
                                             "value": "Health::Health::Hit"
                                           },
                                           "parameters": [
-                                            "redpatchsquare",
+                                            "Monsters",
                                             "Health",
                                             "5",
                                             "",
@@ -6461,7 +6530,7 @@
                 "value": "PathfindingBehavior::SetDestination"
               },
               "parameters": [
-                "redpatchsquare",
+                "Monsters",
                 "Pathfinding",
                 "",
                 "Camera.X()",
@@ -6533,7 +6602,7 @@
                 "value": "Health::Health::Health"
               },
               "parameters": [
-                "redpatchsquare",
+                "Monsters",
                 "Health",
                 "<=",
                 "0",
@@ -6557,7 +6626,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "redpatchsquare",
+                "Monsters",
                 ""
               ]
             },
@@ -6568,8 +6637,8 @@
               "parameters": [
                 "",
                 "PickUpPatch",
-                "redpatchsquare.X()",
-                "redpatchsquare.Y()",
+                "Monsters.X()",
+                "Monsters.Y()",
                 ""
               ]
             }
@@ -6635,20 +6704,199 @@
                 "MaxMonsters",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-              },
-              "parameters": [
-                "spawnpointA",
-                "ObjectSpawner",
-                "redpatchsquare",
-                "spawnpointA.Y()"
-              ]
             }
           ],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    ">",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    "<=",
+                    "RedThreshold"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointA",
+                    "ObjectSpawner",
+                    "redpatchsquare",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    ">",
+                    "RedThreshold"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    "<=",
+                    "YellowThreshold"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointA",
+                    "ObjectSpawner",
+                    "yellowpatch",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    ">",
+                    "YellowThreshold"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    "<=",
+                    "GreenThreshold"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointA",
+                    "ObjectSpawner",
+                    "greenpatch",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    ">",
+                    "GreenThreshold"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    "<=",
+                    "BlueThreshold"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointA",
+                    "ObjectSpawner",
+                    "bluepatch",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    ">",
+                    "BlueThreshold"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    "<=",
+                    "WhiteThreshold"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointA",
+                    "ObjectSpawner",
+                    "whitepatch",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -6672,6 +6920,16 @@
                     "MonstersAlive",
                     "+",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    "=",
+                    "RandomInRange(MinSpawnRange,MaxSpawnRange)"
                   ]
                 }
               ]
@@ -6722,11 +6980,28 @@
               "conditions": [
                 {
                   "type": {
-                    "inverted": true,
-                    "value": "Visible"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "BrickDoorB"
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorB"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorC"
+                      ]
+                    }
                   ]
                 }
               ],
@@ -6753,20 +7028,199 @@
                     "MaxMonsters",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointB",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
                 }
               ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "RedThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        "redpatchsquare",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "RedThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "YellowThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        "yellowpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "YellowThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "GreenThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        "greenpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "GreenThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "BlueThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        "bluepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "BlueThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "WhiteThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        "whitepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -6791,84 +7245,15 @@
                         "+",
                         "1"
                       ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Visible"
-                  },
-                  "parameters": [
-                    "BrickDoorC"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
-                  },
-                  "parameters": [
-                    "spawnpointB",
-                    "ObjectSpawner",
-                    "MonsterRate",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
-                  },
-                  "parameters": [
-                    "spawnpointB",
-                    "ObjectSpawner",
-                    "=",
-                    "MaxMonsters",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointB",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
-                      },
-                      "parameters": [
-                        "spawnpointB",
-                        "ObjectSpawner",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
+                    },
                     {
                       "type": {
                         "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "MonstersAlive",
-                        "+",
-                        "1"
+                        "SpawnType",
+                        "=",
+                        "RandomInRange(MinSpawnRange,MaxSpawnRange)"
                       ]
                     }
                   ]
@@ -6921,11 +7306,37 @@
               "conditions": [
                 {
                   "type": {
-                    "inverted": true,
-                    "value": "Visible"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "BrickDoorA"
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorA"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorD"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorE"
+                      ]
+                    }
                   ]
                 }
               ],
@@ -6952,20 +7363,199 @@
                     "MaxMonsters",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointC",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
                 }
               ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "RedThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        "redpatchsquare",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "RedThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "YellowThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        "yellowpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "YellowThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "GreenThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        "greenpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "GreenThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "BlueThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        "bluepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "BlueThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "WhiteThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        "whitepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -6990,163 +7580,15 @@
                         "+",
                         "1"
                       ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Visible"
-                  },
-                  "parameters": [
-                    "BrickDoorD"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
-                  },
-                  "parameters": [
-                    "spawnpointC",
-                    "ObjectSpawner",
-                    "MonsterRate",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
-                  },
-                  "parameters": [
-                    "spawnpointC",
-                    "ObjectSpawner",
-                    "=",
-                    "MaxMonsters",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointC",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
-                      },
-                      "parameters": [
-                        "spawnpointC",
-                        "ObjectSpawner",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
+                    },
                     {
                       "type": {
                         "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "MonstersAlive",
-                        "+",
-                        "1"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Visible"
-                  },
-                  "parameters": [
-                    "BrickDoorE"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
-                  },
-                  "parameters": [
-                    "spawnpointC",
-                    "ObjectSpawner",
-                    "MonsterRate",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
-                  },
-                  "parameters": [
-                    "spawnpointC",
-                    "ObjectSpawner",
-                    "=",
-                    "MaxMonsters",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointC",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
-                      },
-                      "parameters": [
-                        "spawnpointC",
-                        "ObjectSpawner",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "MonstersAlive",
-                        "+",
-                        "1"
+                        "SpawnType",
+                        "=",
+                        "RandomInRange(MinSpawnRange,MaxSpawnRange)"
                       ]
                     }
                   ]
@@ -7199,11 +7641,37 @@
               "conditions": [
                 {
                   "type": {
-                    "inverted": true,
-                    "value": "Visible"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "BrickDoorC"
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorC"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorD"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Visible"
+                      },
+                      "parameters": [
+                        "BrickDoorE"
+                      ]
+                    }
                   ]
                 }
               ],
@@ -7230,20 +7698,199 @@
                     "MaxMonsters",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointD",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
                 }
               ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "RedThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        "redpatchsquare",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "RedThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "YellowThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        "yellowpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "YellowThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "GreenThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        "greenpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "GreenThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "BlueThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        "bluepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "BlueThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "WhiteThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        "whitepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -7268,163 +7915,15 @@
                         "+",
                         "1"
                       ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Visible"
-                  },
-                  "parameters": [
-                    "BrickDoorD"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
-                  },
-                  "parameters": [
-                    "spawnpointD",
-                    "ObjectSpawner",
-                    "MonsterRate",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
-                  },
-                  "parameters": [
-                    "spawnpointD",
-                    "ObjectSpawner",
-                    "=",
-                    "MaxMonsters",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointD",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
-                      },
-                      "parameters": [
-                        "spawnpointD",
-                        "ObjectSpawner",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
+                    },
                     {
                       "type": {
                         "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "MonstersAlive",
-                        "+",
-                        "1"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Visible"
-                  },
-                  "parameters": [
-                    "BrickDoorE"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetSpawnPeriod"
-                  },
-                  "parameters": [
-                    "spawnpointD",
-                    "ObjectSpawner",
-                    "MonsterRate",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SetMaxQuantity"
-                  },
-                  "parameters": [
-                    "spawnpointD",
-                    "ObjectSpawner",
-                    "=",
-                    "MaxMonsters",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
-                  },
-                  "parameters": [
-                    "spawnpointD",
-                    "ObjectSpawner",
-                    "redpatchsquare",
-                    "spawnpointA.Y()"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
-                      },
-                      "parameters": [
-                        "spawnpointD",
-                        "ObjectSpawner",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "MonstersAlive",
-                        "+",
-                        "1"
+                        "SpawnType",
+                        "=",
+                        "RandomInRange(MinSpawnRange,MaxSpawnRange)"
                       ]
                     }
                   ]
@@ -7453,7 +7952,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "redpatchsquare",
+                "Monsters",
                 "Camera",
                 "",
                 "",
@@ -7508,7 +8007,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "redpatchsquare",
+                "Monsters",
                 "Camera",
                 "",
                 "",
@@ -7675,7 +8174,7 @@
               "parameters": [
                 "MaxMonsters",
                 "+",
-                "2"
+                "1"
               ]
             },
             {
@@ -7685,7 +8184,17 @@
               "parameters": [
                 "MonsterRate",
                 "=",
-                "MonsterRate * 0.9"
+                "MonsterRate * 0.95"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxSpawnRange",
+                "*",
+                "2"
               ]
             },
             {
@@ -7806,6 +8315,133 @@
               "parameters": [
                 "",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Spawning Randomization"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MinSpawnRange",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxSpawnRange",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "RedThreshold",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "YellowThreshold",
+                "=",
+                "14"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GreenThreshold",
+                "=",
+                "28"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "BlueThreshold",
+                "=",
+                "54"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WhiteThreshold",
+                "=",
+                "240"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "BlackThreshold",
+                "=",
+                "980"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PurpleThreshold",
+                "=",
+                "4000"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SpawnType",
+                "=",
+                "1"
               ]
             }
           ]
@@ -8209,6 +8845,73 @@
               },
               "parameters": [
                 "doortext",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "White Patch Invisibillity"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Health::Health::Health"
+              },
+              "parameters": [
+                "whitepatch",
+                "Health",
+                "=",
+                "25",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "whitepatch"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Health::Health::Health"
+              },
+              "parameters": [
+                "whitepatch",
+                "Health",
+                "<",
+                "24",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "whitepatch",
                 ""
               ]
             }
