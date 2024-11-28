@@ -1537,6 +1537,51 @@
         "name": "bloodscreen",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "credits.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"credits.png\",\"extension\":\".png\",\"pskl\":{}}",
+        "name": "credits.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/credits.png2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "credits.png2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "credits2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "credits2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "credits3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "credits3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "credits.jpg",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"credits.jpg\",\"extension\":\".png\",\"pskl\":{}}",
+        "name": "credits.jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -2401,7 +2446,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.34375202416126144,
+        "zoomFactor": 0.3797121001948264,
         "windowMask": false
       },
       "objectsGroups": [
@@ -3187,6 +3232,22 @@
           "x": 375,
           "y": 1400,
           "zOrder": 53,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Credits",
+          "persistentUuid": "4695c47d-7ae4-4dc7-a79d-b3d5119c83af",
+          "width": 0,
+          "x": 525,
+          "y": 175,
+          "zOrder": 54,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -5337,6 +5398,41 @@
             "bottomFaceResourceRepeat": true,
             "materialType": "Basic"
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Credits",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "",
+            "backFaceResourceName": "",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "credits.jpg",
+            "rightFaceResourceName": "",
+            "topFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "frontFaceVisible": false,
+            "backFaceVisible": false,
+            "leftFaceVisible": true,
+            "rightFaceVisible": false,
+            "topFaceVisible": false,
+            "bottomFaceVisible": false,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -5455,6 +5551,9 @@
           },
           {
             "objectName": "doortext"
+          },
+          {
+            "objectName": "Credits"
           },
           {
             "objectName": "RedFlatBar"
@@ -5576,6 +5675,17 @@
                 "Opacity",
                 "=",
                 "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "Credits",
+                "Object3D",
+                "=",
+                "50"
               ]
             }
           ],
@@ -6216,6 +6326,15 @@
                                   "parameters": [
                                     "StartRound",
                                     "\"GameTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Delete"
+                                  },
+                                  "parameters": [
+                                    "Credits",
+                                    ""
                                   ]
                                 }
                               ]
@@ -8169,6 +8288,22 @@
             },
             {
               "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "gunviewmodel"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "RedFlatBar"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -8598,6 +8733,24 @@
               "parameters": [
                 "",
                 "\"redTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "gunviewmodel",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "RedFlatBar",
+                ""
               ]
             }
           ]
