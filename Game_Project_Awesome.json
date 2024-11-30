@@ -1699,6 +1699,15 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/04a69986487fb427759132f3807a28db0f3b845623d5ba34d063f46a9ee22f63_Purple Button With Shadow_Pressed.png",
           "name": "Purple Button With Shadow_Pressed.png"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Untitled drawing (3).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Untitled drawing (3).png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -2563,7 +2572,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.7370816317994688,
+        "zoomFactor": 0.2912258866911379,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2945,7 +2954,7 @@
           "width": 3400,
           "x": -4050,
           "y": -225,
-          "z": 300,
+          "z": 150,
           "zOrder": 21,
           "numberProperties": [],
           "stringProperties": [],
@@ -3610,6 +3619,23 @@
           "x": 864,
           "y": 650,
           "zOrder": 64,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 825,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "darkness",
+          "persistentUuid": "57e160d8-9986-425f-b3f6-920a51dc8e04",
+          "width": 1450,
+          "x": -325,
+          "y": -1200,
+          "zOrder": 65,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4416,10 +4442,10 @@
               "PercentDamageReduction": 0
             },
             {
+              "acceleration": 500,
+              "maxSpeed": 200,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
-              "acceleration": 300,
-              "maxSpeed": 175,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -4511,11 +4537,11 @@
               "PercentDamageReduction": 0
             },
             {
+              "maxSpeed": 300,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
               "acceleration": 40,
               "angularMaxSpeed": 180,
-              "maxSpeed": 250,
               "allowDiagonals": true,
               "angleOffset": 0,
               "cellHeight": 20,
@@ -5112,9 +5138,9 @@
             {
               "name": "Health",
               "type": "Health::Health",
-              "Health": 75,
+              "Health": 70,
               "CurrentHealth": 0,
-              "MaxHealth": 75,
+              "MaxHealth": 70,
               "DamageCooldown": 0,
               "AllowOverHealing": false,
               "IsHealthJustDamaged": false,
@@ -5138,11 +5164,11 @@
               "PercentDamageReduction": 0
             },
             {
+              "maxSpeed": 100,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
               "acceleration": 500,
               "angularMaxSpeed": 120,
-              "maxSpeed": 80,
               "allowDiagonals": true,
               "angleOffset": 0,
               "cellHeight": 20,
@@ -6635,6 +6661,71 @@
             "characterSize": 25,
             "color": "0;0;0"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "darkness",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Untitled drawing (3).png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 960,
+                            "y": 0
+                          },
+                          {
+                            "x": 960,
+                            "y": 720
+                          },
+                          {
+                            "x": 0,
+                            "y": 720
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -6762,6 +6853,9 @@
           },
           {
             "objectName": "bloodscreen"
+          },
+          {
+            "objectName": "darkness"
           },
           {
             "objectName": "BlueButtonWithShadow"
@@ -7138,6 +7232,29 @@
                     "-100",
                     "=",
                     "-75"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "darkness",
+                    "=",
+                    "-100",
+                    "=",
+                    "-50"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "darkness",
+                    "Opacity",
+                    "=",
+                    "0"
                   ]
                 }
               ]
@@ -7859,6 +7976,67 @@
                                             "Damage",
                                             "",
                                             "",
+                                            ""
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "PickedInstancesCount"
+                                          },
+                                          "parameters": [
+                                            "bluepatch",
+                                            "=",
+                                            "1"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "OpacityCapability::OpacityBehavior::Value"
+                                          },
+                                          "parameters": [
+                                            "darkness",
+                                            "Opacity",
+                                            "<",
+                                            "255"
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "OpacityCapability::OpacityBehavior::SetValue"
+                                          },
+                                          "parameters": [
+                                            "darkness",
+                                            "Opacity",
+                                            "+",
+                                            "255 - darkness.Opacity::Value()"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "Wait"
+                                          },
+                                          "parameters": [
+                                            "5"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                                          },
+                                          "parameters": [
+                                            "darkness",
+                                            "Tween",
+                                            "\"linear\"",
+                                            "0",
+                                            "\"linear\"",
+                                            "0.2",
                                             ""
                                           ]
                                         }
