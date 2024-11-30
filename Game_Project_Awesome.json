@@ -2872,6 +2872,31 @@
           "name": "maxregen_cost_value",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "Damage",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Speed",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MaxHealth",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "HealthRegen",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "monster_damage",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -3757,8 +3782,8 @@
               "ChanceToDodge": 0,
               "IsJustDodged": false,
               "HealToBeApplied": 0,
-              "HealthRegenRate": 1,
-              "HealthRegenDelay": 5,
+              "HealthRegenRate": 0,
+              "HealthRegenDelay": 0,
               "IsJustHealed": false,
               "CurrentShieldPoints": 2.0247e-320,
               "MaxShieldPoints": 0,
@@ -3989,7 +4014,7 @@
             }
           ],
           "content": {
-            "text": "Accuracy: 100%",
+            "text": "Good Luck!",
             "opacity": 255,
             "scale": 2,
             "fontSize": 20,
@@ -5265,7 +5290,7 @@
           "behaviors": [],
           "content": {
             "PreviousHighValueDuration": 0,
-            "ShowLabel": false,
+            "ShowLabel": true,
             "BarTopPadding": 4,
             "BarBottomPadding": 6,
             "BarLeftPadding": 4,
@@ -6879,6 +6904,46 @@
             },
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Damage",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Speed",
+                "=",
+                "175"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxHealth",
+                "=",
+                "100"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HealthRegen",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
                 "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
               },
               "parameters": [
@@ -7013,6 +7078,16 @@
                 "Text",
                 "=",
                 "\"Cost: \" + maxregen_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "monster_damage",
+                "=",
+                "0.25"
               ]
             },
             {
@@ -7286,7 +7361,7 @@
                       "parameters": [
                         "Camera",
                         "Camera.Angle()",
-                        "200",
+                        "Speed",
                         ""
                       ]
                     }
@@ -7313,7 +7388,7 @@
                       "parameters": [
                         "Camera",
                         "Camera.Angle()+180",
-                        "200",
+                        "Speed",
                         ""
                       ]
                     }
@@ -7340,7 +7415,7 @@
                       "parameters": [
                         "Camera",
                         "Camera.Angle()+90",
-                        "200",
+                        "Speed",
                         ""
                       ]
                     }
@@ -7367,7 +7442,7 @@
                       "parameters": [
                         "Camera",
                         "Camera.Angle()-90",
-                        "200",
+                        "Speed",
                         ""
                       ]
                     }
@@ -7752,7 +7827,7 @@
                                           "parameters": [
                                             "Score",
                                             "+",
-                                            "5"
+                                            "Damage"
                                           ]
                                         },
                                         {
@@ -7762,7 +7837,7 @@
                                           "parameters": [
                                             "PopUpText",
                                             "=",
-                                            "\"5\""
+                                            "Damage"
                                           ]
                                         },
                                         {
@@ -7781,7 +7856,7 @@
                                           "parameters": [
                                             "Monsters",
                                             "Health",
-                                            "5",
+                                            "Damage",
                                             "",
                                             "",
                                             ""
@@ -9403,13 +9478,12 @@
           "conditions": [
             {
               "type": {
-                "value": "CollisionNP"
+                "value": "Distance"
               },
               "parameters": [
                 "Monsters",
                 "Camera",
-                "",
-                "",
+                "50",
                 ""
               ]
             }
@@ -9422,7 +9496,7 @@
               "parameters": [
                 "Camera",
                 "Health",
-                "0.25",
+                "monster_damage",
                 "no",
                 "no",
                 ""
@@ -10316,8 +10390,30 @@
                 "RedFlatBar",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "monster_damage",
+                "*",
+                "1.2"
+              ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Fire Rate Upgrade\n"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -10376,7 +10472,7 @@
               "parameters": [
                 "FireRate",
                 "-",
-                "0.07"
+                "0.06"
               ]
             },
             {
@@ -10386,7 +10482,7 @@
               "parameters": [
                 "PatchCollected",
                 "-",
-                "50"
+                "firerate_cost_value"
               ]
             },
             {
@@ -10408,6 +10504,409 @@
                 "Text",
                 "=",
                 "\"Cost: \" + firerate_cost_value"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Damage Upgrade"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "PauseEVERYTHING",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "BlueButtonWithShadow",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                ">=",
+                "damage_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Damage",
+                "+",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                "-",
+                "damage_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "damage_cost_value",
+                "+",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "cost_damage",
+                "Text",
+                "=",
+                "\"Cost: \" + damage_cost_value"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Speed Upgrade"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "PauseEVERYTHING",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "RedButtonWithShadow",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                ">=",
+                "movespeed_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Speed",
+                "+",
+                "25"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                "-",
+                "movespeed_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "movespeed_cost_value",
+                "+",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "cost_movespeed",
+                "Text",
+                "=",
+                "\"Cost: \" + movespeed_cost_value"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "MaxHealth Upgrade"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "PauseEVERYTHING",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "PurpleButtonWithShadow",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                ">=",
+                "maxhealth_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxHealth",
+                "+",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                "-",
+                "maxhealth_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "maxhealth_cost_value",
+                "+",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "cost_maxhp",
+                "Text",
+                "=",
+                "\"Cost: \" + maxhealth_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "Health::Health::SetMaxHealthOp"
+              },
+              "parameters": [
+                "Camera",
+                "Health",
+                "=",
+                "MaxHealth",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
+              },
+              "parameters": [
+                "RedFlatBar",
+                "=",
+                "MaxHealth",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Regen Upgrade"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "PauseEVERYTHING",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "BrownButtonWithShadow",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                ">=",
+                "maxregen_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HealthRegen",
+                "+",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatchCollected",
+                "-",
+                "maxregen_cost_value"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "maxregen_cost_value",
+                "+",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "cost_healthregen",
+                "Text",
+                "=",
+                "\"Cost: \" + maxregen_cost_value"
               ]
             }
           ]
@@ -10470,7 +10969,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": ""
+          "comment": "Door Logic"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -10770,7 +11269,7 @@
               "parameters": [
                 "Camera",
                 "Health",
-                "5",
+                "HealthRegen",
                 ""
               ]
             },
