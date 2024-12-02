@@ -2572,7 +2572,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.2912258866911379,
+        "zoomFactor": 0.4950840073749346,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2675,6 +2675,12 @@
             },
             {
               "name": "whitepatch"
+            },
+            {
+              "name": "blackpatch"
+            },
+            {
+              "name": "purplepatch"
             }
           ]
         },
@@ -2971,7 +2977,6 @@
           "width": 10,
           "x": 515,
           "y": 275,
-          "z": 50,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -3304,8 +3309,8 @@
           "name": "RedFlatBar",
           "persistentUuid": "63b53d80-bed1-4942-94ba-c000ee71fcb5",
           "width": 0,
-          "x": 526,
-          "y": 25,
+          "x": 26,
+          "y": 75,
           "zOrder": 45,
           "numberProperties": [],
           "stringProperties": [],
@@ -3443,22 +3448,6 @@
           "x": 375,
           "y": 1400,
           "zOrder": 53,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Credits",
-          "persistentUuid": "4695c47d-7ae4-4dc7-a79d-b3d5119c83af",
-          "width": 0,
-          "x": 525,
-          "y": 175,
-          "zOrder": 54,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3636,6 +3625,38 @@
           "x": -325,
           "y": -1200,
           "zOrder": 65,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "ScoreLabel",
+          "persistentUuid": "c2056749-8869-431d-92af-d3d1aa1fcaf7",
+          "width": 0,
+          "x": 25,
+          "y": 25,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Death_Text",
+          "persistentUuid": "eeda6b93-56a7-4b91-b9fa-04c03a8426e1",
+          "width": 0,
+          "x": 528,
+          "y": 399,
+          "zOrder": 66,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3993,7 +4014,7 @@
           "effects": [],
           "behaviors": [],
           "content": {
-            "text": "Targets Hit: 0",
+            "text": "Score: 0",
             "opacity": 255,
             "scale": 2,
             "fontSize": 20,
@@ -4321,9 +4342,9 @@
             {
               "name": "Health",
               "type": "Health::Health",
-              "Health": 25,
+              "Health": 40,
               "CurrentHealth": 0,
-              "MaxHealth": 25,
+              "MaxHealth": 40,
               "DamageCooldown": 0,
               "AllowOverHealing": false,
               "IsHealthJustDamaged": false,
@@ -4347,9 +4368,10 @@
               "PercentDamageReduction": 0
             },
             {
+              "acceleration": 500,
+              "maxSpeed": 150,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
-              "acceleration": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -4358,7 +4380,6 @@
               "extraBorder": 0,
               "gridOffsetX": 0,
               "gridOffsetY": 0,
-              "maxSpeed": 100,
               "rotateObject": true,
               "smoothingMaxCellGap": 1
             },
@@ -4442,10 +4463,10 @@
               "PercentDamageReduction": 0
             },
             {
-              "acceleration": 500,
-              "maxSpeed": 200,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
+              "acceleration": 500,
+              "maxSpeed": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -4537,9 +4558,9 @@
               "PercentDamageReduction": 0
             },
             {
-              "maxSpeed": 300,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
+              "maxSpeed": 300,
               "acceleration": 40,
               "angularMaxSpeed": 180,
               "allowDiagonals": true,
@@ -5164,9 +5185,9 @@
               "PercentDamageReduction": 0
             },
             {
-              "maxSpeed": 100,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
+              "maxSpeed": 100,
               "acceleration": 500,
               "angularMaxSpeed": 120,
               "allowDiagonals": true,
@@ -6726,6 +6747,48 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Death_Text",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "You Died!\nPress (R) to Reset",
+          "font": "CantoraOne-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 30,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "You Died!\nPress (R) to Reset",
+            "font": "CantoraOne-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 30,
+            "color": "0;0;0"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -6781,6 +6844,9 @@
           },
           {
             "objectName": "ScoreLabel"
+          },
+          {
+            "objectName": "Death_Text"
           },
           {
             "objectName": "Accuracy"
@@ -7190,6 +7256,14 @@
               },
               "parameters": [
                 "buttons and text"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Death_Text"
               ]
             }
           ],
@@ -8349,6 +8423,281 @@
                 ""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::Health"
+                  },
+                  "parameters": [
+                    "redpatchsquare",
+                    "Health",
+                    "<=",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Score",
+                    "+",
+                    "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "ScoreLabel",
+                    "=",
+                    "\"Score: \" + Score"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::Health"
+                  },
+                  "parameters": [
+                    "yellowpatch",
+                    "Health",
+                    "<=",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Score",
+                    "+",
+                    "15"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "ScoreLabel",
+                    "=",
+                    "\"Score: \" + Score"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::Health"
+                  },
+                  "parameters": [
+                    "greenpatch",
+                    "Health",
+                    "<=",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Score",
+                    "+",
+                    "20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "ScoreLabel",
+                    "=",
+                    "\"Score: \" + Score"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::Health"
+                  },
+                  "parameters": [
+                    "bluepatch",
+                    "Health",
+                    "<=",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Score",
+                    "+",
+                    "25"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "ScoreLabel",
+                    "=",
+                    "\"Score: \" + Score"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::Health"
+                  },
+                  "parameters": [
+                    "whitepatch",
+                    "Health",
+                    "<=",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Score",
+                    "+",
+                    "30"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "ScoreLabel",
+                    "=",
+                    "\"Score: \" + Score"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::Health"
+                  },
+                  "parameters": [
+                    "blackpatch",
+                    "Health",
+                    "<=",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Score",
+                    "+",
+                    "35"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "ScoreLabel",
+                    "=",
+                    "\"Score: \" + Score"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::Health"
+                  },
+                  "parameters": [
+                    "purplepatch",
+                    "Health",
+                    "<=",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Score",
+                    "+",
+                    "40"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "ScoreLabel",
+                    "=",
+                    "\"Score: \" + Score"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -8599,6 +8948,72 @@
                     "spawnpointA",
                     "ObjectSpawner",
                     "whitepatch",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    ">",
+                    "WhiteThreshold"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    "<=",
+                    "BlackThreshold"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointA",
+                    "ObjectSpawner",
+                    "blackpatch",
+                    "spawnpointA.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SpawnType",
+                    ">",
+                    "BlackThreshold"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                  },
+                  "parameters": [
+                    "spawnpointA",
+                    "ObjectSpawner",
+                    "purplepatch",
                     "spawnpointA.Y()"
                   ]
                 }
@@ -8923,6 +9338,72 @@
                         "spawnpointB",
                         "ObjectSpawner",
                         "whitepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "WhiteThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "BlackThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        "blackpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "BlackThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointB",
+                        "ObjectSpawner",
+                        "purplepatch",
                         "spawnpointA.Y()"
                       ]
                     }
@@ -9268,6 +9749,72 @@
                   "conditions": [
                     {
                       "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "WhiteThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "BlackThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        "blackpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "BlackThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointC",
+                        "ObjectSpawner",
+                        "purplepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
                         "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
                       },
                       "parameters": [
@@ -9603,6 +10150,72 @@
                   "conditions": [
                     {
                       "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "WhiteThreshold"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        "<=",
+                        "BlackThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        "blackpatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SpawnType",
+                        ">",
+                        "BlackThreshold"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ObjectSpawner::ObjectSpawner::SpawnObject"
+                      },
+                      "parameters": [
+                        "spawnpointD",
+                        "ObjectSpawner",
+                        "purplepatch",
+                        "spawnpointA.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
                         "value": "ObjectSpawner::ObjectSpawner::ObjectWasJustSpawned"
                       },
                       "parameters": [
@@ -9765,11 +10378,51 @@
           "actions": [
             {
               "type": {
-                "value": "Scene"
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
               },
               "parameters": [
-                "",
-                "\"GameScene\"",
+                "bloodscreen",
+                "Opacity",
+                "=",
+                "255"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "ScoreLabel",
+                "=",
+                "535"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "ScoreLabel",
+                "=",
+                "200"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "ScoreLabel",
+                "=",
+                "70"
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Death_Text",
                 ""
               ]
             }
@@ -10172,6 +10825,14 @@
             },
             {
               "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "ScoreLabel"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetBooleanVariable"
               },
               "parameters": [
@@ -10534,6 +11195,15 @@
             },
             {
               "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "ScoreLabel",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "SetBooleanVariable"
               },
               "parameters": [
@@ -10576,7 +11246,7 @@
               "parameters": [
                 "monster_damage",
                 "*",
-                "1.2"
+                "1.15"
               ]
             }
           ]
@@ -11333,6 +12003,132 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Black Patch Speed"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Health::Health::Health"
+              },
+              "parameters": [
+                "blackpatch",
+                "Health",
+                "<=",
+                "30",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Health::Health::Health"
+              },
+              "parameters": [
+                "blackpatch",
+                "Health",
+                ">",
+                "20",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "blackpatch",
+                "Pathfinding",
+                "=",
+                "300"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Health::Health::Health"
+              },
+              "parameters": [
+                "blackpatch",
+                "Health",
+                "<=",
+                "20",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Health::Health::Health"
+              },
+              "parameters": [
+                "blackpatch",
+                "Health",
+                ">",
+                "10",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "blackpatch",
+                "Pathfinding",
+                "=",
+                "400"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Health::Health::Health"
+              },
+              "parameters": [
+                "blackpatch",
+                "Health",
+                "<=",
+                "10",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "blackpatch",
+                "Pathfinding",
+                "=",
+                "500"
+              ]
+            }
+          ]
+        },
+        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
@@ -11493,7 +12289,6 @@
           "parameters": []
         },
         {
-          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
