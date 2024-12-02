@@ -2572,7 +2572,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.4950840073749346,
+        "zoomFactor": 0.32169117647061846,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2993,21 +2993,6 @@
           "x": 1543,
           "y": 232,
           "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 114,
-          "layer": "UI",
-          "name": "Restart",
-          "persistentUuid": "d7427ea5-9fbf-47e4-8ce8-7a88be6602c7",
-          "width": 700,
-          "x": 325,
-          "y": 285,
-          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -5064,9 +5049,9 @@
             {
               "name": "Health",
               "type": "Health::Health",
-              "Health": 25,
+              "Health": 200,
               "CurrentHealth": 0,
-              "MaxHealth": 25,
+              "MaxHealth": 200,
               "DamageCooldown": 0,
               "AllowOverHealing": false,
               "IsHealthJustDamaged": false,
@@ -5090,9 +5075,10 @@
               "PercentDamageReduction": 0
             },
             {
+              "acceleration": 10,
+              "maxSpeed": 500,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
-              "acceleration": 200,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -5101,7 +5087,6 @@
               "extraBorder": 0,
               "gridOffsetX": 0,
               "gridOffsetY": 0,
-              "maxSpeed": 100,
               "rotateObject": true,
               "smoothingMaxCellGap": 1
             },
@@ -10394,7 +10379,7 @@
               "parameters": [
                 "ScoreLabel",
                 "=",
-                "535"
+                "520"
               ]
             },
             {
