@@ -4353,10 +4353,10 @@
               "PercentDamageReduction": 0
             },
             {
-              "acceleration": 500,
-              "maxSpeed": 150,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
+              "acceleration": 500,
+              "maxSpeed": 150,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -5008,11 +5008,11 @@
           },
           "content": {
             "bold": false,
-            "isOutlineEnabled": false,
+            "isOutlineEnabled": true,
             "isShadowEnabled": false,
             "italic": false,
             "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineThickness": 4,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
             "shadowColor": "0;0;0",
@@ -5075,10 +5075,10 @@
               "PercentDamageReduction": 0
             },
             {
-              "acceleration": 10,
-              "maxSpeed": 500,
               "name": "Pathfinding",
               "type": "PathfindingBehavior::PathfindingBehavior",
+              "acceleration": 10,
+              "maxSpeed": 500,
               "allowDiagonals": true,
               "angleOffset": 0,
               "angularMaxSpeed": 180,
@@ -11785,8 +11785,8 @@
               "parameters": [
                 "",
                 "doortext",
-                "1250",
-                "70",
+                "1700",
+                "60",
                 "\"Crosshair\""
               ]
             }
